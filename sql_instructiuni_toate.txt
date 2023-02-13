@@ -1,0 +1,151 @@
+CREATE TABLE `bd`.`sedii` ( 
+`cod_sediu` INT NOT NULL AUTO_INCREMENT , 
+`nr_contact` VARCHAR NOT NULL , `site` VARCHAR(50) NOT NULL ,
+ `localitate` VARCHAR(50) NOT NULL , `id_marc` INT NOT NULL , 
+PRIMARY KEY (`cod_sediu`)) ENGINE = InnoDB;
+
+CREATE TABLE `bd`.`motoare` ( 
+`serie_sasiu` INT NOT NULL ,  
+`tip_motor` VARCHAR(50) NOT NULL ,  `putere` FLOAT NOT NULL ,  
+`nr_cilindrii` INT NOT NULL ,  `capacit_cilindrica` FLOAT NOT NULL , 
+ `distributie` VARCHAR(50) NOT NULL , 
+ `capacitate_baie_ulei` FLOAT NOT NULL ,   
+ PRIMARY KEY  (`serie_sasiu`)) ENGINE = InnoDB;
+
+CREATE TABLE `bd`.`dimensiuni` ( 
+`id_dimensiuni` INT NOT NULL AUTO_INCREMENT ,  
+`lungime` FLOAT NOT NULL ,  `latime` FLOAT NOT NULL ,  
+`greutate` FLOAT NOT NULL ,  
+`inaltime` FLOAT NOT NULL , 
+ `volum_portbagaj` FLOAT NOT NULL ,   
+ PRIMARY KEY  (`id_dimensiuni`)) ENGINE = InnoDB;
+
+CREATE TABLE `bd`.`dotari` ( 
+`id_dotari` INT NOT NULL AUTO_INCREMENT , 
+ `senzori` VARCHAR(50) NOT NULL ,  
+`abs` BOOLEAN NOT NULL ,  
+`gps` BOOLEAN NOT NULL , 
+ `cutie_viteze` VARCHAR(50) NOT NULL , 
+ `aer_conditionat` BOOLEAN NOT NULL ,  
+`tapiterie` VARCHAR(50) NOT NULL , 
+ `nr_usi` INT NOT NULL ,    
+PRIMARY KEY  (`id_dotari`)) ENGINE = InnoDB;
+
+CREATE TABLE `bd`.`culori` ( `cod_culoare` INT NOT NULL AUTO_INCREMENT , 
+ `grad_culoare` VARCHAR(50) NOT NULL , 
+ `nume_culoare` VARCHAR(50) NOT NULL ,  
+  PRIMARY KEY  (`cod_culoare`)) ENGINE = InnoDB;
+
+ALTER TABLE `culori`  ADD `opacitateid` INT NOT NULL  AFTER `nume_culoare`;
+
+ALTER TABLE `culori`  ADD `metalizareid` INT NOT NULL  AFTER `opacitateid`;
+
+CREATE TABLE `bd`.`metalizate` ( `id_metalizare` INT NOT NULL AUTO_INCREMENT , 
+ `grad_metalizare` FLOAT NOT NULL ,    PRIMARY KEY  (`id_metalizare`)) ENGINE = InnoDB;
+
+CREATE TABLE `bd`.`opace` ( `id_opacit` INT NOT NULL AUTO_INCREMENT ,  `grad_opacitate` FLOAT NOT NULL ,
+  `grad_luciu` FLOAT NOT NULL ,    PRIMARY KEY  (`id_opacit`)) ENGINE = InnoDB;
+
+ALTER TABLE `culori` ADD CONSTRAINT `opacitateid`
+ FOREIGN KEY (`opacitateid`) REFERENCES `opace`(`opacitateid`) 
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `culori` ADD CONSTRAINT `metalizareid`
+ FOREIGN KEY (`metalizareid`) REFERENCES `metalizate`(`metalizareid`) 
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+CREATE TABLE `bd`.`marci` ( `id_marca` INT NOT NULL AUTO_INCREMENT ,
+ `nume_marca` VARCHAR(50) NOT NULL , 
+`an_incepere` INT NOT NULL , `nr_vanzari` FLOAT NOT NULL , 
+`capital` FLOAT NOT NULL , `cod_cul` INT NOT NULL , 
+PRIMARY KEY (`id_marca`)) ENGINE = InnoDB;
+
+ALTER TABLE `marci` ADD CONSTRAINT `cod_cul`
+ FOREIGN KEY (`cod_cul`) REFERENCES `culori`(`cod_culoare`)
+ ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `sedii` ADD CONSTRAINT `id_marc`
+ FOREIGN KEY (`id_marc`) REFERENCES `marci`(`id_marca`) 
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+CREATE TABLE `bd`.`modele` ( 
+`id_model` INT NOT NULL AUTO_INCREMENT ,
+ `nume_model` VARCHAR(50) NOT NULL , 
+`an_fabricatie` INT NOT NULL , `an_incet_prod` INT NOT NULL , 
+`id_mar` INT NOT NULL , 
+PRIMARY KEY (`id_model`)) ENGINE = InnoDB;
+
+ALTER TABLE `modele` ADD CONSTRAINT `id_mar`
+ FOREIGN KEY (`id_mar`) REFERENCES `marci`(`id_marca`) 
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+CREATE TABLE `bd`.`modmotor` (
+ `id_mod_mot` INT NOT NULL AUTO_INCREMENT , 
+ `id_mod` INT NOT NULL ,  `serie_mot` INT NOT NULL ,  
+  PRIMARY KEY  (`id_mod_mot`)) ENGINE = InnoDB;
+
+ALTER TABLE `modmotor` ADD CONSTRAINT `id_mod` 
+FOREIGN KEY (`id_mod`) REFERENCES `modele`(`id_model`) 
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `modmotor` ADD CONSTRAINT `serie_mot`
+ FOREIGN KEY (`serie_mot`) REFERENCES `motoare`(`serie_sasiu`) 
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+CREATE TABLE `bd`.`moddot` ( 
+`id_model_dotari` INT NOT NULL AUTO_INCREMENT , 
+`id_mo` INT NOT NULL , `id_dot` INT NOT NULL , 
+PRIMARY KEY (`id_model_dotari`)) ENGINE = InnoDB;
+
+ALTER TABLE `moddot` ADD CONSTRAINT `id_mo` 
+FOREIGN KEY (`id_mo`) REFERENCES `modele`(`id_model`) 
+ON DELETE CASCADE ON UPDATE CASCADE; 
+
+ALTER TABLE `moddot` ADD CONSTRAINT `id_dot`
+ FOREIGN KEY (`id_dot`) REFERENCES `dotari`(`id_dotari`) 
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+CREATE TABLE `bd`.`tipuri_caroserii` ( 
+`nume_caroserie` VARCHAR(255) NOT NULL , 
+ `an_platforma` INT NOT NULL ) ENGINE = InnoDB;
+
+ALTER TABLE `tipuri_caroserii`  ADD `id_car`
+ INT NOT NULL AUTO_INCREMENT  FIRST, 
+ ADD   PRIMARY KEY  (`id_car`);
+
+ALTER TABLE `modcar` ADD CONSTRAINT `id_car` 
+FOREIGN KEY (`id_car`) REFERENCES `tipuri_caroserii`(`id_car`)
+ ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+CREATE TABLE `bd`.`cardim` ( 
+`id_cardim` INT NOT NULL AUTO_INCREMENT , 
+ `id_di` INT NOT NULL ,  `nume_caroserie` VARCHAR(255) NOT NULL , 
+ `an_platforma` INT NOT NULL ,   
+ PRIMARY KEY  (`id_cardim`)) ENGINE = InnoDB;
+
+ALTER TABLE `cardim` ADD CONSTRAINT `id_di`
+ FOREIGN KEY (`id_di`) REFERENCES `dimensiuni`(`id_dimensiuni`)
+ ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `cardim`  ADD `id_car` 
+INT NOT NULL  AFTER `nume_caroserie`;
+
+ALTER TABLE `cardim` ADD CONSTRAINT `id_c`
+ FOREIGN KEY (`id_car`) REFERENCES `tipuri_caroserii`(`id_car`) 
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+CREATE TABLE modcar( nume_caroserie varchar(255),
+ id_m int, PRIMARY KEY(nume_caroserie,id_m), 
+FOREIGN KEY (`id_m`) REFERENCES `modele`(`id_model`) )ENGINE = InnoDB;
+
+ALTER TABLE `modcar` ADD CONSTRAINT `id_mmod` 
+FOREIGN KEY (`id_mod`) REFERENCES `modele`(`id_model`) 
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+CREATE TABLE cardim( 
+id_dim int, nume_caroserie varchar(255), 
+an_platforma int, PRIMARY KEY (id_dim,nume_caroserie), 
+FOREIGN KEY (`id_dim`) REFERENCES `dimensiuni`(`id_dimensiuni`) )
+ENGINE = InnoDB
+

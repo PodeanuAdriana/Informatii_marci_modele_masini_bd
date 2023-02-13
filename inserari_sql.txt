@@ -1,0 +1,298 @@
+-----inserari opace-----
+INSERT INTO `opace` (`id_opacit`, `grad_opacitate`, `grad_luciu`) VALUES ('1', '16.12', '11.15');
+INSERT INTO `opace` (`id_opacit`, `grad_opacitate`, `grad_luciu`) VALUES ('2', '16.12', '11.15');
+INSERT INTO `opace` (`id_opacit`, `grad_opacitate`, `grad_luciu`) VALUES ('3', '20.31', '18.19'), ('4', '19.16', '18.45');
+INSERT INTO `opace` (`id_opacit`, `grad_opacitate`, `grad_luciu`) VALUES ('5', '20.31', '18.19'), ('6', '19.16', '18.45');
+INSERT INTO `opace` (`id_opacit`, `grad_opacitate`, `grad_luciu`) VALUES ('7', '56.31', '56.31'), ('8', '96.30', '41.52');
+INSERT INTO `opace` (`id_opacit`, `grad_opacitate`, `grad_luciu`) VALUES ('9', '72.34', '15.41'), ('10', '15.15', '27.24');
+INSERT INTO `opace` (`id_opacit`, `grad_opacitate`, `grad_luciu`) VALUES ('11', '31.32', '64.52'), ('12', '19.16', '18.45');
+INSERT INTO `opace` (`id_opacit`, `grad_opacitate`, `grad_luciu`) VALUES ('13', '13.42', '65.71'), ('14', '20.15', '18.19');
+INSERT INTO `opace` (`id_opacit`, `grad_opacitate`, `grad_luciu`) VALUES ('15', '93.18', '72.13'), ('16', '16.19', '16.19');
+INSERT INTO `opace` (`id_opacit`, `grad_opacitate`, `grad_luciu`) VALUES ('17', '18.93', '13.72'), ('18', '19.81', '16.19');
+INSERT INTO `opace` (`id_opacit`, `grad_opacitate`, `grad_luciu`) VALUES ('19', '15.15', '42.84'), ('20', '20.22', '22.11');
+
+------inserare metalizate------
+
+INSERT INTO `metalizate` (`id_metalizare`, `grad_metalizare`) VALUES ('1', '16.12'), ('2', '11.15');
+INSERT INTO `metalizate` (`id_metalizare`, `grad_metalizare`) VALUES ('3', '20.31'), ('4', '18.19');
+INSERT INTO `metalizate` (`id_metalizare`, `grad_metalizare`) VALUES ('5', '19.16'), ('6', '18.45');
+INSERT INTO `metalizate` (`id_metalizare`, `grad_metalizare`) VALUES ('7', '96.30'), ('8', '18.47');
+INSERT INTO `metalizate` (`id_metalizare`, `grad_metalizare`) VALUES ('9', '41.52'), ('10', '15.15');
+INSERT INTO `metalizate` (`id_metalizare`, `grad_metalizare`) VALUES ('11', '27.24'), ('12', '31.23');;
+INSERT INTO `metalizate` (`id_metalizare`, `grad_metalizare`) VALUES ('13', '56.31'), ('14', '72.34');
+INSERT INTO `metalizate` (`id_metalizare`, `grad_metalizare`) VALUES ('15', '18.45'), ('16', '77.38');
+INSERT INTO `metalizate` (`id_metalizare`, `grad_metalizare`) VALUES ('17', '93.18'), ('18', '18.96');
+INSERT INTO `metalizate` (`id_metalizare`, `grad_metalizare`) VALUES ('19', '9.32'), ('20', '27.23');
+
+--------inserare culori--------
+
+INSERT INTO `culori` (`cod_culoare`, `grad_culoare`, `nume_culoare`, 
+`opacitateid`, `metalizareid`) 
+VALUES ('1', 'inchis', 'rosu', '7', '7'), ('2', 'deschis', 'rosu', '15', '7');
+INSERT INTO `culori` (`cod_culoare`, `grad_culoare`,
+ `nume_culoare`, `opacitateid`, `metalizareid`)
+ VALUES ('3', 'inchis', 'verde', '17', '17'),
+('4', 'deschis', 'albastru', '15', '3');
+INSERT INTO `culori` (`cod_culoare`, `grad_culoare`,
+ `nume_culoare`, `opacitateid`, `metalizareid`) 
+VALUES ('5', 'deschis', 'verde', '2', '3'),
+ ('6', 'inchis', 'albastru', '3', '2');
+INSERT INTO `culori` (`cod_culoare`, `grad_culoare`,
+ `nume_culoare`, `opacitateid`, `metalizareid`) 
+VALUES ('7', 'deschis', 'portocaliu', '1', '1'),
+ ('8', 'inchis', 'galben', '2', '2');
+INSERT INTO `culori` (`cod_culoare`, `grad_culoare`, 
+`nume_culoare`, `opacitateid`, `metalizareid`) 
+VALUES ('9', 'deschis', 'mov', '1', '10'),
+ ('10', 'inchis', 'mov', '19', '18');
+INSERT INTO `culori` (`cod_culoare`, `grad_culoare`, 
+`nume_culoare`, `opacitateid`, `metalizareid`) 
+VALUES ('11', 'deschis', 'roz', '7', '12'),
+ ('12', 'inchis', 'roz', '19', '20');
+INSERT INTO `culori` (`cod_culoare`, `grad_culoare`, 
+`nume_culoare`, `opacitateid`, `metalizareid`) 
+VALUES ('13', 'deschis', 'gri', '4', '5'), 
+('14', 'inchis', 'gri', '9', '9');
+INSERT INTO `culori` (`cod_culoare`, `grad_culoare`,
+ `nume_culoare`, `opacitateid`, `metalizareid`) 
+VALUES ('15', 'deschis', 'gri', '6', '7'), 
+('16', 'inchis', 'gri', '3', '16');
+INSERT INTO `culori` (`cod_culoare`, `grad_culoare`, 
+`nume_culoare`, `opacitateid`, `metalizareid`)
+ VALUES ('17', 'inchis', 'rosu', '6', '6');
+INSERT INTO `culori` (`cod_culoare`, `grad_culoare`,
+ `nume_culoare`, `opacitateid`, `metalizareid`) 
+VALUES ('18', 'deschis', 'rosu', '5', '4');
+INSERT INTO `culori` (`cod_culoare`, `grad_culoare`, 
+`nume_culoare`, `opacitateid`, `metalizareid`) 
+VALUES ('19', 'inchis', 'negru', '14', '13'), 
+('20', 'deschis', 'negru', '20', '11');
+
+--------inserari marci--------
+
+INSERT INTO `marci` (`id_marca`, `nume_marca`, `an_incepere`, `nr_vanzari`, `capital`, `cod_cul`) 
+VALUES ('1', 'audi', '1985', '33.61', '3.17', '14'), 
+('2', 'bmw', '1917', '7.20', '57.55', '19');
+
+INSERT INTO `marci` (`id_marca`, `nume_marca`, `an_incepere`, `nr_vanzari`, `capital`, `cod_cul`)
+ VALUES ('3', 'audi', '1985', '33.61', '3.17', '17'),
+ ('4', 'bmw', '1917', '7.20', '57.55', '5');
+
+INSERT INTO `marci` (`id_marca`, `nume_marca`, `an_incepere`, `nr_vanzari`, `capital`, `cod_cul`) 
+VALUES ('5', 'audi', '1985', '33.61', '3.17', '15'),
+ ('6', 'bmw', '1917', '7.20', '57.55', '18');
+
+INSERT INTO `marci` (`id_marca`, `nume_marca`, `an_incepere`, `nr_vanzari`, `capital`, `cod_cul`) 
+VALUES ('7', 'audi', '1985', '33.61', '3.17', '11'),
+ ('8', 'bmw', '1917', '7.20', '57.55', '2');
+
+INSERT INTO `marci` (`id_marca`, `nume_marca`, `an_incepere`, `nr_vanzari`, `capital`, `cod_cul`) 
+VALUES ('9', 'dacia', '1966', '18.29', '298', '1'),
+ ('10', 'dacia', '1966', '18.29', '298', '3');
+
+INSERT INTO `marci` (`id_marca`, `nume_marca`, `an_incepere`, `nr_vanzari`, `capital`, `cod_cul`) 
+VALUES ('11', 'dacia', '1966', '18.29', '298', '4'), 
+('12', 'dacia', '1966', '18.29', '298', '6');
+
+INSERT INTO `marci` (`id_marca`, `nume_marca`, `an_incepere`, `nr_vanzari`, `capital`, `cod_cul`)
+ VALUES ('13', 'ford', '1903', '6.6', '120.9', '7'), 
+('14', 'ford', '1903', '6.6', '120.9', '8');
+
+INSERT INTO `marci` (`id_marca`, `nume_marca`, `an_incepere`, `nr_vanzari`, `capital`, `cod_cul`) 
+VALUES ('15', 'ford', '1903', '6.6', '120.9', '12'),
+ ('16', 'ford', '1903', '6.6', '120.9', '13');
+INSERT INTO `marci` (`id_marca`, `nume_marca`, `an_incepere`, `nr_vanzari`, `capital`, `cod_cul`) 
+VALUES ('17', 'mercedes-benz', '1926', '13.26', '155.23', '19'), 
+('18', 'mercedes-benz', '1926', '13.26', '155.23', '15');
+
+----------inserare modele--------
+
+INSERT INTO `modele` (`id_model`, `nume_model`, `an_fabricatie`, `an_incet_prod`, `id_marca`)
+ VALUES ('1', 'A4', '2019', '0', '1'), ('2', 'A5', '2019', '0', '3');
+
+INSERT INTO `modele` (`id_model`, `nume_model`, `an_fabricatie`, `an_incet_prod`, `id_marca`)
+ VALUES ('3', 'e-tron', '2020', '0', '1'), ('4', 'e-tron', '2020', '0', '3');
+
+INSERT INTO `modele` (`id_model`, `nume_model`, `an_fabricatie`, `an_incet_prod`, `id_marca`)
+ VALUES ('5', 'Seria3', '2011', '2015', '4'), ('6', 'seria 3', '2011', '2015', '6');
+
+INSERT INTO `modele` (`id_model`, `nume_model`, `an_fabricatie`, `an_incet_prod`, `id_marca`) 
+VALUES ('7', 'X6', '2014', '2018', '2'), ('8', 'X6', '2014', '2018', '8');
+
+INSERT INTO `modele` (`id_model`, `nume_model`, `an_fabricatie`, `an_incet_prod`, `id_marca`) 
+VALUES ('9', 'Logan II', '2018', '2020', '12'), ('10', 'Solenza', '2003', '2005', '10');
+
+INSERT INTO `modele` (`id_model`, `nume_model`, `an_fabricatie`, `an_incet_prod`, `id_marca`) 
+VALUES ('11', 'Dokker', '2019', '2021', '11'), ('12', 'Duster', '2018', '2018', '9');
+
+INSERT INTO `modele` (`id_model`, `nume_model`, `an_fabricatie`, `an_incet_prod`, `id_marca`) 
+VALUES ('14', 'Edge', '2007', '2011', '13'), ('15', 'Granada', '1977', '1981', '14');
+
+INSERT INTO `modele` (`id_model`, `nume_model`, `an_fabricatie`, `an_incet_prod`, `id_marca`) 
+VALUES ('16', 'Bronco', '2022', '0', '15'),
+ ('17', 'Fiesta', '2011', '2012', '16');
+
+INSERT INTO `modele` (`id_model`, `nume_model`, `an_fabricatie`, `an_incet_prod`, `id_marca`) 
+VALUES ('13', 'ClasaB', '2019', '2022', '17'), ('18', 'Citan', '2021', '0', '17');
+
+INSERT INTO `modele` (`id_model`, `nume_model`, `an_fabricatie`, `an_incet_prod`, `id_marca`) 
+VALUES ('19', 'ClasaE', '2017', '2020', '18'), ('20', 'EQE', '2022', '0', '18');
+
+-----------inserare motoare--------
+
+INSERT INTO `motoare` (`serie_sasiu`, `tip_motor`, `putere`, `nr_cilindrii`, `capacit_cilindrica`, `distributie`, `capacitate_baie_ulei`) 
+VALUES ('1234567895', 'benzina', '1.2', '5', '5.2', 'pe curea', '5.2'), ('1234567891', 'diesel', '3.4', '6', '4', 'pe lant', '5.2');
+
+INSERT INTO `motoare` (`serie_sasiu`, `tip_motor`, `putere`, `nr_cilindrii`, `capacit_cilindrica`, `distributie`, `capacitate_baie_ulei`) 
+VALUES ('1234567892', 'benzina', '1.2', '3', '3.2', 'pe curea', '3.2'), ('1234567893', 'diesel', '4.6', '6', '6', 'pe lant', '4.6');
+
+INSERT INTO `motoare` (`serie_sasiu`, `tip_motor`, `putere`, `nr_cilindrii`, `capacit_cilindrica`, `distributie`, `capacitate_baie_ulei`) 
+VALUES ('1234567894', 'diesel', '5.2', '6', '6.3', 'pe lant', '4.3'), ('1234567896', 'diesel', '4.2', '5', '3.2', 'pe lant', '3.2');
+
+INSERT INTO `motoare` (`serie_sasiu`, `tip_motor`, `putere`, `nr_cilindrii`, `capacit_cilindrica`, `distributie`, `capacitate_baie_ulei`) 
+VALUES ('1234567897', 'diesel', '6.3', '7', '6.3', 'pe lant', '5.0'), ('1234567898', 'diesel', '3.6', '5', '4.6', 'pe lant', '3.2');
+
+INSERT INTO `motoare` (`serie_sasiu`, `tip_motor`, `putere`, `nr_cilindrii`, `capacit_cilindrica`, `distributie`, `capacitate_baie_ulei`) 
+VALUES ('1234567899', 'benzina', '1.4', '3', '3.2', 'pe curea', '3.1'), ('1234567881', 'benzina', '1.2', '3', '3.0', 'pe lant', '2.4');
+
+INSERT INTO `motoare` (`serie_sasiu`, `tip_motor`, `putere`, `nr_cilindrii`, `capacit_cilindrica`, `distributie`, `capacitate_baie_ulei`)
+ VALUES ('1234567882', 'benzina', '1.2', '4', '3.6', 'pe lant', '3.1'), ('1234567883', 'benzina', '1.1', '3', '4.0', 'pe curea', '2.0');
+
+INSERT INTO `motoare` (`serie_sasiu`, `tip_motor`, `putere`, `nr_cilindrii`, `capacit_cilindrica`, `distributie`, `capacitate_baie_ulei`) 
+VALUES ('1234567885', 'diesel', '3.4', '4', '4.2', 'pe curea', '2.5'), ('1234567886', 'diesel', '4.5', '4', '3.6', 'pe lant', '4.5');
+
+INSERT INTO `motoare` (`serie_sasiu`, `tip_motor`, `putere`, `nr_cilindrii`, `capacit_cilindrica`, `distributie`, `capacitate_baie_ulei`) 
+VALUES ('1234567884', 'diesel', '4.4', '4', '4.5', 'pe curea', '3.5'), ('1234567887', 'benzina', '3.2', '3', '2.7', 'pe lant', '2.5');
+
+----------------inserare dotari---------
+
+INSERT INTO `dotari` (`id_dotari`, `senzori`, `abs`, `gps`, `cutie_viteze`, `aer_conditionat`, `tapiterie`, `nr_usi`)
+ VALUES ('1', 'parcare', '1', '1', 'manuala', '1', 'rosie', '5'), ('2', 'parcare', '1', '1', 'automata', '1', 'rosie', '5');
+
+INSERT INTO `dotari` (`id_dotari`, `senzori`, `abs`, `gps`, `cutie_viteze`, `aer_conditionat`, `tapiterie`, `nr_usi`) 
+VALUES ('3', 'parcare', '1', '0', 'manuala', '1', 'panza', '5'), ('4', 'parcare', '1', '1', 'automata', '1', 'panza', '5');
+
+INSERT INTO `dotari` (`id_dotari`, `senzori`, `abs`, `gps`, `cutie_viteze`, `aer_conditionat`, `tapiterie`, `nr_usi`) 
+VALUES ('5', 'nu', '1', '0', 'manuala', '1', 'panza', '5'), ('6', 'nu', '1', '1', 'automata', '1', 'piele', '5');
+
+INSERT INTO `dotari` (`id_dotari`, `senzori`, `abs`, `gps`, `cutie_viteze`, `aer_conditionat`, `tapiterie`, `nr_usi`)
+ VALUES ('7', 'nu', '0', '0', 'manuala', '1', 'panza', '5'), ('8', 'nu', '1', '0', 'automata', '1', 'piele', '5');
+
+INSERT INTO `dotari` (`id_dotari`, `senzori`, `abs`, `gps`, `cutie_viteze`, `aer_conditionat`, `tapiterie`, `nr_usi`) 
+VALUES ('9', 'climatizare', '1', '1', 'manuala', '1', 'piele', '2'), ('10', 'climatizare', '1', '0', 'automata', '1', 'piele', '5');
+
+INSERT INTO `dotari` (`id_dotari`, `senzori`, `abs`, `gps`, `cutie_viteze`, `aer_conditionat`, `tapiterie`, `nr_usi`) 
+VALUES ('11', 'climatizare', '1', '1', 'automata', '1', 'panza', '5'), ('12', 'climatizare', '1', '0', 'manuala', '1', 'panza', '5');
+
+---------------inserari tipuri_caroserii-----------
+
+INSERT INTO `tipuri_caroserii` (`id_car`, `nume_caroserie`, `an_platforma`)
+ VALUES ('1', 'berlina', '2005'), ('2', 'sedan', '2007');
+
+INSERT INTO `tipuri_caroserii` (`id_car`, `nume_caroserie`, `an_platforma`)
+ VALUES ('3', 'sedan', '2005'), ('4', 'berlina', '2007');
+
+INSERT INTO `tipuri_caroserii` (`id_car`, `nume_caroserie`, `an_platforma`) 
+VALUES ('5', 'break', '2007'), ('6', 'break', '2009');
+
+INSERT INTO `tipuri_caroserii` (`id_car`, `nume_caroserie`, `an_platforma`) 
+VALUES ('7', 'break', '2018'), ('8', 'break', '2019');
+
+INSERT INTO `tipuri_caroserii` (`id_car`, `nume_caroserie`, `an_platforma`)
+ VALUES ('9', 'spider', '2017'), ('10', 'spider', '2010');
+
+INSERT INTO `tipuri_caroserii` (`id_car`, `nume_caroserie`, `an_platforma`)
+ VALUES ('11', 'spider', '2020'), ('12', 'spider', '2021');
+
+INSERT INTO `tipuri_caroserii` (`id_car`, `nume_caroserie`, `an_platforma`) 
+VALUES ('13', 'roadster', '2011'), ('14', 'roadster', '2005');
+
+INSERT INTO `tipuri_caroserii` (`id_car`, `nume_caroserie`, `an_platforma`) 
+VALUES ('15', 'roadster', '2017'), ('16', 'roadster', '2020');
+
+------------inserturi sedii----------
+
+INSERT INTO `sedii` (`cod_sediu`, `nr_contact`, `site`, `localitate`, `id_marc`) 
+VALUES ('1', '0725564321', 'https://www.ford.ro/autoturisme', 'Michigan', '13'), 
+('2', '07222563445', 'https://www.ford.ro/autoturisme', 'Michigan', '14');
+
+INSERT INTO `sedii` (`cod_sediu`, `nr_contact`, `site`, `localitate`, `id_marc`) 
+VALUES ('3', '0725564321', 'https://www.ford.ro/autoturisme', 'Michigan', '15'), 
+('4', '07222563445', 'https://www.ford.ro/autoturisme', 'Michigan', '16');
+
+INSERT INTO `sedii` (`cod_sediu`, `nr_contact`, `site`, `localitate`, `id_marc`)
+ VALUES ('5', '0725564255', 'https://www.dacia.ro/', 'Pitesti', '12'),
+ ('6', '0725564255', 'https://www.dacia.ro/', 'Pitesti', '10');
+
+INSERT INTO `sedii` (`cod_sediu`, `nr_contact`, `site`, `localitate`, `id_marc`)
+ VALUES ('7', '0725564255', 'https://www.dacia.ro/', 'Pitesti', '9'), 
+('8', '0725564255', 'https://www.dacia.ro/', 'Pitesti', '11');
+
+INSERT INTO `sedii` (`cod_sediu`, `nr_contact`, `site`, `localitate`, `id_marc`) 
+VALUES ('9', '0733264587', 'https://www.bmw.ro/ro/index.html', 'Munchen', '2'),
+ ('10', '0733264587', 'https://www.bmw.ro/ro/index.html', 'Munchen', '4');
+
+INSERT INTO `sedii` (`cod_sediu`, `nr_contact`, `site`, `localitate`, `id_marc`) 
+VALUES ('11', '0733264587', 'https://www.bmw.ro/ro/index.html', 'Munchen', '6'), 
+('12', '0733264587', 'https://www.bmw.ro/ro/index.html', 'Munchen', '8');
+
+INSERT INTO `sedii` (`cod_sediu`, `nr_contact`, `site`, `localitate`, `id_marc`) 
+VALUES ('13', '0735448963', 'https://www.audi.com/en.html', 'Ingolstadt', '1'),
+ ('14', '0735448963', 'https://www.audi.com/en.html', 'Ingolstadt', '3');
+
+INSERT INTO `sedii` (`cod_sediu`, `nr_contact`, `site`, `localitate`, `id_marc`)
+ VALUES ('15', '0735448963', 'https://www.audi.com/en.html', 'Ingolstadt', '5'), 
+('16', '0735448963', 'https://www.audi.com/en.html', 'Ingolstadt', '7');
+
+INSERT INTO `sedii` (`cod_sediu`, `nr_contact`, `site`, `localitate`, `id_marc`) 
+VALUES ('17', '072356894', 'https://www.mercedes-benz.com/en/', 'Stuttgart', '17'), 
+('18', '072356894', 'https://www.mercedes-benz.com/en/', 'Stuttgart', '18');
+
+---------------inserari dimensiuni--------------
+
+
+INSERT INTO `dimensiuni` (`id_dimensiuni`, `lungime`, `latime`, `greutate`, `inaltime`, `volum_portbagaj`) 
+VALUES ('1', '3.50', '2.50', '300.000', '2.5', '1.5'),
+ ('2', '2.50', '2.50', '300.000', '2.50', '1.50');
+
+INSERT INTO `dimensiuni` (`id_dimensiuni`, `lungime`, `latime`, `greutate`, `inaltime`, `volum_portbagaj`) 
+VALUES ('3', '3.50', '2.50', '250.000', '2.5', '1.5'), 
+('4', '2.50', '2.50', '250.000', '2.50', '1.50');
+
+INSERT INTO `dimensiuni` (`id_dimensiuni`, `lungime`, `latime`, `greutate`, `inaltime`, `volum_portbagaj`)
+ VALUES ('5', '2.50', '1.50', '350.000', '3.00', '1.50'), 
+('6', '2.50', '1.50', '350.000', '2.50', '1.50');
+
+INSERT INTO `dimensiuni` (`id_dimensiuni`, `lungime`, `latime`, `greutate`, `inaltime`, `volum_portbagaj`) 
+VALUES ('7', '2.50', '1.50', '350.000', '3.00', '2.50'), 
+('8', '2.50', '1.50', '350.000', '2.50', '2.00');
+
+INSERT INTO `dimensiuni` (`id_dimensiuni`, `lungime`, `latime`, `greutate`, `inaltime`, `volum_portbagaj`) 
+VALUES ('9', '3.0', '2.50', '250.000', '1.50', '1.00'),
+ ('10', '3.0', '2.5', '250.000', '1.50', '1.50');
+
+INSERT INTO `dimensiuni` (`id_dimensiuni`, `lungime`, `latime`, `greutate`, `inaltime`, `volum_portbagaj`) 
+VALUES ('11', '3.0', '2.50', '250.000', '1.00', '1.00'), 
+('12', '3.0', '2.5', '250.000', '1.00', '1.00');
+--------------modificare tabela marci------------------
+
+ALTER TABLE `marci`  ADD `cod_sediu` INT NOT NULL  AFTER `cod_cul`;
+
+UPDATE `marci` SET `cod_sediu` = '13' WHERE `marci`.`id_marca` = 1;
+UPDATE `marci` SET `cod_sediu` = '9' WHERE `marci`.`id_marca` = 2;
+UPDATE `marci` SET `cod_sediu` = '14' WHERE `marci`.`id_marca` = 3;
+UPDATE `marci` SET `cod_sediu` = '10' WHERE `marci`.`id_marca` = 4;
+UPDATE `marci` SET `cod_sediu` = '15' WHERE `marci`.`id_marca` = 5;
+UPDATE `marci` SET `cod_sediu` = '11' WHERE `marci`.`id_marca` = 6;
+UPDATE `marci` SET `cod_sediu` = '16' WHERE `marci`.`id_marca` = 7;
+UPDATE `marci` SET `cod_sediu` = '12' WHERE `marci`.`id_marca` = 8;
+UPDATE `marci` SET `cod_sediu` = '5' WHERE `marci`.`id_marca` = 9;
+UPDATE `marci` SET `cod_sediu` = '6' WHERE `marci`.`id_marca` = 10;
+UPDATE `marci` SET `cod_sediu` = '7' WHERE `marci`.`id_marca` = 11;
+UPDATE `marci` SET `cod_sediu` = '8' WHERE `marci`.`id_marca` = 12;
+UPDATE `marci` SET `cod_sediu` = '1' WHERE `marci`.`id_marca` = 13;
+UPDATE `marci` SET `cod_sediu` = '2' WHERE `marci`.`id_marca` = 14;
+UPDATE `marci` SET `cod_sediu` = '3' WHERE `marci`.`id_marca` = 15;
+UPDATE `marci` SET `cod_sediu` = '4' WHERE `marci`.`id_marca` = 16;
+UPDATE `marci` SET `cod_sediu` = '17' WHERE `marci`.`id_marca` = 17;
+UPDATE `marci` SET `cod_sediu` = '18' WHERE `marci`.`id_marca` = 18;
